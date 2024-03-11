@@ -2,13 +2,14 @@ package com.example.insightify.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
 @Table(uniqueConstraints = {
         @UniqueConstraint(columnNames = {"project_id", "employee_id"})
 })
-public class PerformanceMetric
+public class PerformanceMetric implements Serializable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
